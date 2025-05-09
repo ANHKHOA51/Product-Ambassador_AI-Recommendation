@@ -13,9 +13,6 @@ sheet = client.open("KOLs_Dataset").sheet1
 
 # Lấy toàn bộ dữ liệu
 data = sheet.get_all_records()
-# for row in data:
-#         print(row)
-
 
 docs = [
     Document (
