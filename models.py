@@ -4,35 +4,35 @@ from langchain_community.chat_models import ChatLiteLLM
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
-from data import docs, fetch_data
+from data import fetch_data
 import os
 from dotenv import load_dotenv
 import json
 
 load_dotenv()
 
-class SuitableAmbassadorRetrieverTool(Tool):
-    name = "suitable_ambassador_retriever"
-    description = "Retrieves information about KOLs who is most suitable for given details of a product (compare KOLs characteristics with the messages of the product, the related field of KOLs with product, compatibiity between Media, Target customer and Price wỉth the one of the prompt if required)"
-    inputs = {
-        "query": {
-            "type": "string",
-            "description": "The detailed description about the product to compare with all the KOLs to find the most suitable ambassador"
-        }
-    }
-    output_type = "string"
+# class SuitableAmbassadorRetrieverTool(Tool):
+#     name = "suitable_ambassador_retriever"
+#     description = "Retrieves information about KOLs who is most suitable for given details of a product (compare KOLs characteristics with the messages of the product, the related field of KOLs with product, compatibiity between Media, Target customer and Price wỉth the one of the prompt if required)"
+#     inputs = {
+#         "query": {
+#             "type": "string",
+#             "description": "The detailed description about the product to compare with all the KOLs to find the most suitable ambassador"
+#         }
+#     }
+#     output_type = "string"
 
-    def __init__(self, docs):
-        self.is_initialized = False
-        self.retriever = BM25Retriever.from_documents(docs)
+#     def __init__(self, docs):
+#         self.is_initialized = False
+#         self.retriever = BM25Retriever.from_documents(docs)
 
-    def forward(self, query: str):
-          results = self.retriever.get_relevant_documents(query)
-          if results:
-            answer = "\n\n".join([doc.page_content["name"] for doc in results[:3]])
-            return f"{answer}"
-          else:
-            return "No suitable KOLs found"
+#     def forward(self, query: str):
+#           results = self.retriever.get_relevant_documents(query)
+#           if results:
+#             answer = "\n\n".join([doc.page_content["name"] for doc in results[:3]])
+#             return f"{answer}"
+#           else:
+#             return "No suitable KOLs found"
           
 model = LiteLLMModel(
     model_id='openrouter/qwen/qwen2.5-vl-32b-instruct:free',
@@ -89,5 +89,5 @@ def retrieve_product(id):
 
         return chain.invoke({"query": user_query})
         
-find = SuitableAmbassadorRetrieverTool(docs)
+# find = SuitableAmbassadorRetrieverTool(docs)
 search = DuckDuckGoSearchTool()

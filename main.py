@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from models import get_agent, retrieve_product
+from models import retrieve_product
 
 app = FastAPI()
 
