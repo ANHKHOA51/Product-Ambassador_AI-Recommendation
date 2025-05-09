@@ -1,5 +1,5 @@
-from smolagents import Tool, LiteLLMModel, DuckDuckGoSearchTool, CodeAgent
-from langchain_community.retrievers import BM25Retriever
+from smolagents import LiteLLMModel, CodeAgent
+# from langchain_community.retrievers import BM25Retriever
 from langchain_community.chat_models import ChatLiteLLM
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
@@ -90,4 +90,4 @@ def retrieve_product(id):
         return chain.invoke({"query": user_query})
         
 # find = SuitableAmbassadorRetrieverTool(docs)
-search = DuckDuckGoSearchTool()
+# search = DuckDuckGoSearchTool()

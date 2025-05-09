@@ -8,3 +8,4 @@ langchain-community
 langchain-core
 python-dotenv
 rank_bm25
+duckduckgo-search
