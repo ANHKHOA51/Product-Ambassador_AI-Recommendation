@@ -1,0 +1,8 @@
+requests
+fastapi
+pydantic
+smolagents
+langchain
+langchain-community
+langchain-core
+python-dotenv

@@ -7,12 +7,12 @@ app = FastAPI()
 class Message(BaseModel):
     content: str
 
-@app.post("/analyze")
-async def func(query : Message):    
-    agent = get_agent()
-    response = agent.run(query.content + " chỉ cần cho biết tên 3 người phù hợp nhất")
+# @app.post("/analyze")
+# async def func(query : Message):    
+#     agent = get_agent()
+#     response = agent.run(query.content + " chỉ cần cho biết tên 3 người phù hợp nhất")
 
-    return {"response": response}
+#     return {"response": response}
 
 @app.get("/get_product/{id}")
 async def product_info(id: str):
