@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+.env
+.ipynb_checkpoints/
+.vscode/
+*.log
+test.py
+sample.txt
+credentials.json
