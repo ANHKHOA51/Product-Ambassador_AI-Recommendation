@@ -1,11 +1,6 @@
 requests
 fastapi[standard]
 pydantic
-smolagents
-smolagents[litellm]
 langchain
-langchain-community
-langchain-core
-python-dotenv
-rank_bm25
-duckduckgo-search
+langchain-huggingface
+faiss-cpu
