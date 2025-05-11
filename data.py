@@ -37,3 +37,37 @@ def create_doc():
             ]
         
         return docs
+    
+
+# def create_doc():
+#     url = os.getenv("influencer_DB") + "influencer"
+#     kols = fetch_data(url)
+
+#     if kols == None:
+#         raise Exception("Fetch data failed")
+#     else:
+#         docs = []
+#         embedding = []
+#         for kol in kols:
+
+#             docs.append(
+#                 Document (
+#                     page_content="\n".join([
+#                         f"id: {kol['id']}",
+#                         f"name: {kol['name']}",
+#                         f"location: {kol['location']}",
+#                         f"description: {kol['description']}",
+#                         f"characteristic: {kol['characteristic']}",
+#                         f"field: {kol['field']}",
+#                         f"platform: {kol['platform']}",
+#                     ]),
+#                     metadata={
+#                         "description": kol["description"],
+#                         "field": kol["field"],
+#                         "characteristic": kol["characteristic"]}
+#                 )
+#             )
+            
+#             embedding.append(kol["description_vector"])
+
+#         return docs, embedding
