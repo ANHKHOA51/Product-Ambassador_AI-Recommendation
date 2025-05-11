@@ -9,21 +9,22 @@ from data import create_doc
 
 load_dotenv()
 
-documents = create_doc()
-embeddings = HuggingFaceEmbeddings()
-vector_store = FAISS.from_documents(documents, embeddings)
+# documents = create_doc()
+# embeddings = HuggingFaceEmbeddings()
 
-# Initialize a retriever for querying the vector store
-retriever = vector_store.as_retriever(search_type="mmr", search_k=5)
+# vector_store = FAISS.from_documents(documents, embeddings)
+# print(vector_store[0])
+# # Initialize a retriever for querying the vector store
+# retriever = vector_store.as_retriever(search_type="mmr", search_k=5)
 
 app = FastAPI()
 
 class Message(BaseModel):
     content: str
 
-@app.post("/analyze")
-async def func(query : Message):    
-    return find_ambassador(retriever=retriever, query=query.content)
+# @app.post("/analyze")
+# async def func(query : Message):    
+#     return find_ambassador(retriever=retriever, query=query.content)
 
 @app.get("/get_product/{id}")
 async def product_info(id: str):
