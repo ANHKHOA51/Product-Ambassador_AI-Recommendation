@@ -1,4 +1,4 @@
-from langchain_community.chat_models import ChatLiteLLM
+from langchain_litellm import ChatLiteLLM
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field

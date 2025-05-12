@@ -1,12 +1,12 @@
 from fastapi import FastAPI
-from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain_community.vectorstores import FAISS
+# from langchain_community.embeddings import HuggingFaceEmbeddings
 from pydantic import BaseModel
 from Extract_model import retrieve_product
-from AgenticRAG_model import find_ambassador
+# from AgenticRAG_model import find_ambassador
 from dotenv import load_dotenv
-from data import create_doc
-from sentence_transformers import SentenceTransformer
+# from data import create_doc
+# from sentence_transformers import SentenceTransformer
 
 load_dotenv()
 
