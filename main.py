@@ -10,22 +10,22 @@ from sentence_transformers import SentenceTransformer
 
 load_dotenv()
 
-documents = create_doc()
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+# documents = create_doc()
+# embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 # embeddings = HuggingFaceEmbeddings()
-vector_store = FAISS.from_documents(documents, embeddings)
+# vector_store = FAISS.from_documents(documents, embeddings)
 
 # Initialize a retriever for querying the vector store
-retriever = vector_store.as_retriever(search_type="mmr", search_k=5)
+# retriever = vector_store.as_retriever(search_type="mmr", search_k=5)
 
 app = FastAPI()
 
 class Message(BaseModel):
     content: str
 
-@app.post("/analyze")
-async def func(query : Message):    
-    return find_ambassador(retriever=retriever, query=query.content)
+# @app.post("/analyze")
+# async def func(query : Message):    
+#     return find_ambassador(retriever=retriever, query=query.content)
 
 @app.get("/get_product/{id}")
 async def product_info(id: str):

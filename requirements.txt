@@ -4,5 +4,6 @@ pydantic
 langchain
 langchain_community
 langchain_core
+litellm
 langchain-huggingface
 faiss-cpu
