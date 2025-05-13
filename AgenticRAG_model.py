@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 from langchain.chains import create_retrieval_chain
 import os
 
-
 class KOL(BaseModel):
     id: str = Field(description="id of influencers")
     name: str = Field(description="Name of influencers")
