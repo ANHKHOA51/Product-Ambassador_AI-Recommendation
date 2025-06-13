@@ -15,7 +15,6 @@ class Info(BaseModel):
     slogan_2: str = Field(description="Another slogan for product marketing")
     slogan_3: str = Field(description="Another slogan for product marketing")
 
-
 def retrieve_product(id):
     product_DB = os.getenv("product_DB")
     url = product_DB + id + "?fields=id,name,brand,description,price,fabric,features,category"
