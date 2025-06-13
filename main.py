@@ -10,7 +10,6 @@ from Extract_model import retrieve_product
 from dotenv import load_dotenv
 
 load_dotenv()
-
 # documents = create_doc()
 # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 # vector_store = FAISS.from_documents(documents, embeddings)
