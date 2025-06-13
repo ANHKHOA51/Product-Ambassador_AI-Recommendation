@@ -38,7 +38,6 @@ def create_doc():
         
         return docs
     
-
 # def create_doc():
 #     url = os.getenv("influencer_DB") + "influencer"
 #     kols = fetch_data(url)
