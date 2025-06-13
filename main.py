@@ -28,7 +28,6 @@ app.add_middleware(
 class Message(BaseModel):
     content: str
 
-
 @app.get("/product/{id}")
 async def product_info(id: str):
     return retrieve_product(id)
